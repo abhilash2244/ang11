@@ -4,3 +4,12 @@
 .optionsColour{
     color: white !important;
 }
+@media (min-width: 192px){
+.navbar-expand-lg .navbar-collapse {
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+}
+}
+

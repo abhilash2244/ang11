@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // form: FormGroup;
+  form= new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  })
   loading = false;
   submitted = false;
 
@@ -16,6 +20,7 @@ export class LoginComponent implements OnInit {
       private formBuilder: FormBuilder,
       private route: ActivatedRoute,
       private router: Router,
+      private http: HttpClient
       // private accountService: AccountService,
       // private alertService: AlertService
   ) { }
@@ -28,14 +33,21 @@ export class LoginComponent implements OnInit {
   }
   login(){
     console.log("in login ")
-    this.router.navigate(['dashboard'])
   }
-
+  
   // convenience getter for easy access to form fields
   // get f() { return this.form.controls; }
-
+  
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
+    console.log(this.form.value)
+   let url = 'http://localhost:8080/login';
+    
+    this.http.post(url,this.form.value).subscribe(res =>{
+      console.log(res)
+    })
+    
+    this.router.navigate(['dashboard'])
 
       // reset alerts on submit
       // this.alertService.clear();

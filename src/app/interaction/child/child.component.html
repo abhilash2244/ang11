@@ -1,0 +1,19 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Child component</h5>
+      <p class="card-text">The data sent from parent component is displayed here in child component</p>
+      <input type="text" class="form-control" [(ngModel)]="inputDatafromParent" />
+      <!-- <input type="button" value="send" (click)="sendData()" class="btn btn-primary"> -->
+  
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Child component</h5>
+      <p class="card-text">Sending data from child to parent using output decorator</p>
+      <input type="text" class="form-control" [(ngModel)]="inputData" />
+      <input type="button" value="send" (click)="sendData()" class="btn btn-primary">
+      
+    </div>
+  </div>

@@ -10,8 +10,15 @@ import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter/state/conter.reducer';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsComponent } from './forms/forms.component';
+import { StudentsComponent } from './students/students.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { ParentComponent } from './interaction/parent/parent.component';
+import { ChildComponent } from './interaction/child/child.component';
+import { MainComponent } from './interaction/main/main.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +28,18 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     CounterButtonsComponent,
     LoginComponent,
     DashboardComponent,
-    EmployeeListComponent  
+    EmployeeListComponent,
+    FormsComponent,
+    StudentsComponent,
+    SearchFilterPipe,
+    ParentComponent,
+    ChildComponent,
+    MainComponent  
     
   ],
   imports: [
     BrowserModule,StoreModule.forRoot({counter: counterReducer}),
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

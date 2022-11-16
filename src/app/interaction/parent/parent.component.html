@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+                <h5 class="card-title">Parent component</h5>
+                <p class="card-text">When we click on the send the input data will be sent to child component</p>
+                <input type="text" class="form-control" [(ngModel)]="inputData" />
+                <input type="button" value="send" (click)="sendData()" class="btn btn-primary">
+
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Parent component</h5>
+                <p class="card-text">Data coming from  child component when event is emitted</p>
+                <input type="text" class="form-control" [(ngModel)]="dataFromChild" />
+        
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-sm">
+        <app-child [inputDatafromParent]="inputDatafromParent" (sendDataToPArent)="sendDataToPArent($event)">
+        </app-child>
+    </div>
+</div>

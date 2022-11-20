@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CounterComponent } from './counter/counter/counter.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './dashboard/home/home.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { FormsComponent } from './forms/forms.component';
 import { MainComponent } from './interaction/main/main.component';
@@ -34,6 +35,14 @@ const routes: Routes = [
       {
         path: 'interactions',
         component: MainComponent
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: '',
+        component: HomeComponent
       }
     ]
 

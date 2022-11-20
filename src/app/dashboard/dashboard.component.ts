@@ -8,6 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class DashboardComponent implements OnInit {
 
+  
 
   constructor(private dataService : DataService) { }
 
@@ -21,4 +22,5 @@ export class DashboardComponent implements OnInit {
     this.dataService.searchMethodCall(searchValue.value)
 
   }
+ 
 }

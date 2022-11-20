@@ -19,6 +19,9 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { ParentComponent } from './interaction/parent/parent.component';
 import { ChildComponent } from './interaction/child/child.component';
 import { MainComponent } from './interaction/main/main.component';
+import { NgChartsModule } from 'ng2-charts';
+import { HomeComponent } from './dashboard/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -34,12 +37,13 @@ import { MainComponent } from './interaction/main/main.component';
     SearchFilterPipe,
     ParentComponent,
     ChildComponent,
-    MainComponent  
+    MainComponent,
+    HomeComponent  
     
   ],
   imports: [
     BrowserModule,StoreModule.forRoot({counter: counterReducer}),
-    AppRoutingModule,ReactiveFormsModule,HttpClientModule,FormsModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule,FormsModule,NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

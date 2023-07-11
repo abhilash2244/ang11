@@ -1,0 +1,117 @@
+<div class="aboutMAin">
+
+    <div class="card">
+        <div class="card-header">
+            Directives in Angular
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p>In Angular, directives are a type of class that adds behavior to an element in the DOM. They are a way to extend the HTML syntax of a web page and create reusable components.</p>
+          </h6>
+          <p class="card-text">
+            <p>There are three types of directives in Angular:</p>
+            <strong>Components : </strong>These are the most common type of directive and are used to create reusable components. Components are a combination of an HTML template and a component class that controls the template.<br>
+            <strong>Structural directives:</strong> These directives alter the structure of the DOM by adding or removing elements. Examples of structural directives include *ngFor and *ngIf.
+            <br>
+            <strong>Attribute directives: </strong>These directives alter the appearance or behavior of an element. Examples of attribute directives include ngStyle and ngClass.
+            
+        </div>
+      </div>
+<br>
+
+      <div class="card">
+        <div class="card-header">
+            Dependency injection
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p>This provides the angular services to inject in any component from constructor</p>
+          </h6>
+            <p>First create a service </p><br>
+            <pre>{{snippet1}}</pre>
+            <p>specify in provider. This helps us to change the dependency name in providers and give a alternate name so that we need not change the name in all components. </p><br>
+            <pre>{{snippet2}}</pre>
+            <pre>{{snippet3}}</pre>
+          <p>This decouples class dependencies.</p>
+        </div>
+      </div>
+      
+      <br>
+      <div class="card">
+        <div class="card-header">
+            Dependency injection continuing scope 
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p>Services are singletons within the scope of an injector, which means there is at most one instance of a service in a given injector. Angular DI has a hierarchical injection system, which means that nested injectors can create their own service instances.</p>
+          </h6>
+            <pre>{{snippet5}}</pre>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-header">
+            Dependency injection continuing @inject and @injectable 
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p>We use the @Inject parameter decorator to instruct Angular we want to resolve a token and inject a dependency into a constructor. We use the @Injectable class decorators to automatically resolve and inject all the parameters of class constructor.</p>
+          </h6>
+            <p>Example </p><br>
+            <pre>{{snipper4}}</pre>
+            <pre>{{snippet1}}</pre>
+        </div>
+      </div>
+
+<br>
+      <div class="card">
+        <div class="card-header">
+            custom directive
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p>Creating a curotm directive</p>
+          </h6>
+            <p>Example </p><br>
+            <pre>{{snippet6}}</pre>
+        </div>
+      </div>
+
+
+
+      <br>
+      <div class="card">
+        <div class="card-header">
+            Decorators
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p></p>
+          </h6>
+            <p>Example </p><br>
+            <pre>{{snippet7}}</pre>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-header">
+            RXJS SUbjects
+        </div>
+        <div class="card-body">
+          <h6 class="card-title"><p></p>
+          </h6>
+            <p>Example </p><br>
+            <pre>{{snippet8}}</pre>
+        </div>
+      </div>
+<br>
+
+<app-feature [data]="data"></app-feature>
+
+<!-- <h4>Directives in Angular</h4>
+<p>In Angular, directives are a type of class that adds behavior to an element in the DOM. They are a way to extend the HTML syntax of a web page and create reusable components.</p>
+<br>
+<p>There are three types of directives in Angular:</p>
+<strong>Components : </strong>These are the most common type of directive and are used to create reusable components. Components are a combination of an HTML template and a component class that controls the template.<br>
+<strong>Structural directives:</strong> These directives alter the structure of the DOM by adding or removing elements. Examples of structural directives include *ngFor and *ngIf.
+<br>
+<strong>Attribute directives: </strong>These directives alter the appearance or behavior of an element. Examples of attribute directives include ngStyle and ngClass. -->
+
+
+</div>

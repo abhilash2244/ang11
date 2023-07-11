@@ -1,0 +1,95 @@
+<h5>
+    switch map
+</h5>
+<p>switch map will stop the previous subscription and start new call. </p>
+<p>Ex: search function: Set debounce time and call new search request</p>
+
+<br>
+
+<h5>
+    Fork join
+</h5>
+<!-- <h6>import { forkJoin, of } from 'rxjs';
+
+    const observable1 = of('Hello');
+    const observable2 = of('RxJS');
+    const observable3 = of('World!');
+    
+    forkJoin([observable1, observable2, observable3]).subscribe(([result1, result2, result3]) => {
+      console.log(`${result1} ${result2} ${result3}`);
+    });</h6> -->
+<p>In this example, we create three observables using the of function, which emit their respective
+     string values. We then pass an array of these observables to forkJoin, which waits for all
+      of them to complete and then emits an array of their results. Finally, we use subscribe to log
+       the concatenated string to the console.
+
+    Note that forkJoin will not emit anything until all of the observables complete, so if any of
+     them never complete, forkJoin will never emit. Additionally, if any of the observables error,
+      forkJoin will immediately propagate the error and not emit anything.
+    
+    
+    
+    </p>
+
+<h5>
+    Merge map
+</h5>
+<p>In RxJS, the mergeMap operator is used to flatten an observable of observables
+     (or a higher-order observable) into a single observable. This can be useful when you 
+     have an observable that emits other observables and you want to "flatten" them into a 
+     single stream of values.</p>
+
+<h5>Concat map</h5>
+<p>In RxJS, the concatMap operator is used to flatten an observable of observables 
+    (or a higher-order observable) into a single observable, but in a way that the inner 
+    observables are emitted in the order they were created. This means that it will wait for 
+    the first inner observable to complete before subscribing to the next inner observable.
+
+</p>
+
+<h5>
+    Exhaust map
+</h5>
+<p>In RxJS, the exhaustMap operator is used to flatten an observable of observables 
+    (or a higher-order observable) into a single observable, but it will ignore all inner observables
+     until the current inner observable completes. It will also unsubscribe from the previous inner 
+     observable,
+      if there was one.
+
+
+    observable emits click events from the document, and exhaustMap is used to transform each click
+     event
+     into an observable that emits the JSON data from an API request.
+     The final result$ observable will emit the JSON data for the first click event, and ignore all 
+     subsequent click events until the first request completes. If another click happens before the 
+     response of first request, the second request will be ignored.
+</p>
+
+
+<h5>
+    Subject
+</h5>
+<p>In Angular, a Subject is a type of RxJS observable that allows you to share a stream of data among 
+    multiple subscribers. It is both an observable and an observer, which means you can use it to both 
+    emit values and subscribe to those values.</p>
+
+<h5>Behavioural subject</h5>
+<p>In Angular, a BehavioralSubject is a type of RxJS Subject that allows you to share a stream of data 
+    among multiple subscribers, while also retaining the latest value emitted. It is a special type of 
+    Subject that, when a new subscriber subscribes to it, immediately emits the latest value emitted by
+     the subject.</p>
+
+<h5>Difference between subject and behavioural subject</h5>
+<p>
+    A Subject does not retain the latest value emitted, whereas a BehavioralSubject does.
+    When a new subscriber subscribes to a Subject, it does not receive any previously emitted values. 
+    It only receives values emitted after the subscription. On the other hand, when a new subscriber 
+    subscribes to a BehavioralSubject, it immediately receives the latest value emitted by the subject, 
+    and any subsequent updates to the subject are emitted to all subscribers.
+    
+</p>
+
+<h5>Async Subject</h5>
+<p>In Angular, an AsyncSubject is a type of RxJS Subject that only emits the last value emitted by the
+     observable sequence, and only after the sequence has completed. It is a special type of Subject 
+     that is useful when you only need the final result of an asynchronous operation.</p>

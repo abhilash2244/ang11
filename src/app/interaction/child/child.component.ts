@@ -10,6 +10,11 @@ export class ChildComponent implements OnInit {
   @Input() inputDatafromParent:any;
   @Output() sendDataToPArent = new EventEmitter<String>();
 
+
+  @Input() color:any;
+@Input() label:any;
+
+
   childData:String = "This is from child comp fetched using view child "
   constructor() { }
 

@@ -40,9 +40,8 @@ export class LoginComponent implements OnInit {
   
   onSubmit() {
     this.submitted = true;
-    console.log(this.form.value)
    let url = 'http://localhost:8080/login';
-    
+    console.log(this.form.value)
     this.http.post(url,this.form.value).subscribe(res =>{
       console.log(res)
     })

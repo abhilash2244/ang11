@@ -37,14 +37,23 @@
 <p>In RxJS, the mergeMap operator is used to flatten an observable of observables
      (or a higher-order observable) into a single observable. This can be useful when you 
      have an observable that emits other observables and you want to "flatten" them into a 
-     single stream of values.</p>
+     single stream of values.
+    when we have 5 reqs,
+    req1,2,3,4,5 is called in same time
+    MErgemap will send all the requests and emit data as a single stream and print what 
+    ever req has sent data 
+    
+    </p>
 
 <h5>Concat map</h5>
 <p>In RxJS, the concatMap operator is used to flatten an observable of observables 
     (or a higher-order observable) into a single observable, but in a way that the inner 
     observables are emitted in the order they were created. This means that it will wait for 
     the first inner observable to complete before subscribing to the next inner observable.
-
+when 5 req are hit for concatmap operator 
+re1,2,3,4,5,
+it will wait for req1 to receive data and then 
+send req2 and wait for its response and then it repeats
 </p>
 
 <h5>
@@ -63,6 +72,13 @@
      The final result$ observable will emit the JSON data for the first click event, and ignore all 
      subsequent click events until the first request completes. If another click happens before the 
      response of first request, the second request will be ignored.
+
+
+     if there are 5 requests 
+     exhaust map is used when req1 is in progress and inbetween req2 has come then it will
+     ignore req2
+     when req3 comes it will ignore 
+     once the req1 is completed then it will accept next reqs.
 </p>
 
 

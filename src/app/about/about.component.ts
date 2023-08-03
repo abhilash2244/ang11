@@ -252,6 +252,29 @@ The async pipe can also be used with other Angular features such as NgIf, NgFor,
 
 In conclusion, the async pipe is a built-in Angular pipe that is used to automatically subscribe to an Observable or Promise and update the view with the emitted data or resolved value. It simplifies the code and prevents memory leaks by automatically subscribing and unsubscribing.
       `
+    },
+    {
+      heading:"Guards",
+      description:`
+      CanActivate Guard:The CanActivate guard is used to control whether a route can be activated or not.
+      It checks if a user is allowed to access a particular route based on certain conditions, such as authentication status or user roles.
+      CanActivateChild Guard:
+
+The CanActivateChild guard works similarly to CanActivate, but it applies to child routes of a parent route.
+It is used to control whether the child routes of a parent route can be activated or not.
+CanDeactivate Guard:
+
+The CanDeactivate guard is used to control whether a route can be deactivated or not.
+It checks if it's safe to leave a particular route, such as when a user has unsaved changes in a form or data.
+CanLoad Guard:
+
+The CanLoad guard is used to control whether a lazy-loaded module can be loaded or not.
+It checks if a user is allowed to load a lazy-loaded module based on certain conditions, such as authentication or feature flags.
+Resolve Guard:
+
+The Resolve guard is used to fetch data before a route is activated.
+It resolves the data needed by a component before the route is rendered, ensuring that the component has the required data when it initializes.
+      `
     }
   ];
 }

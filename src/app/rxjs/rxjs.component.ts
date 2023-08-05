@@ -25,30 +25,42 @@ import {
 export class RxjsComponent implements OnInit {
   observable = new Observable((observer: any) => {
     var intervaltime: any = 0;
-    // observer.next('Started ');
-    // observer.next(' Interval begins ');
+    observer.next('Started ');
+    observer.next(' Interval begins ');
 
     setInterval(() => {
       observer.next((intervaltime += 1));
     }, 1000);
 
-    setTimeout(() => {
-      observer.error(new Error('Please try again'));
-    }, 5000);
+    // setTimeout(() => {
+    //   observer.error(new Error('Please try again'));
+    // }, 5000);
     setTimeout(() => {
       observer.complete();
-    }, 25000);
+    }, 8000);
   });
 
   array1 = [1, 2, 3, 4, 5];
   myObservable2 = from(this.array1);
   transformedObservable = this.myObservable2.pipe(map((data: any) => data * 5));
+  filteredObservable = this.myObservable2.pipe(filter((data: any) => data > 2));
+
   constructor(public http: HttpClient) {}
   ngOnInit(): void {
+    // printing observabe which is written in this class 26 to 41
+    // this.observable.subscribe((res: any) => {
+    //   console.log('printing observabel =', res);
+    // });
+
+    // working on lines 43 to 46
+    // this.myObservable2.subscribe((res)=>{
+    //   console.log("observable 2",res)
+    // })
+
     // behavioural subject vs subject ---------------
     const subject = new Subject<string>();
     const behaviorSubject = new BehaviorSubject<string>('default value');
-    const replaySubject = new ReplaySubject(2);
+    const replaySubject = new ReplaySubject(3);
     const asyncSubject = new AsyncSubject<string>();
 
     subject.next('hello');
@@ -61,15 +73,21 @@ export class RxjsComponent implements OnInit {
     asyncSubject.complete();
 
     // this will not print value because it will print only after subscribed and the values assigned after subscription
-    subject.subscribe((value) => console.log('Subject subscription:', value));
+    subject.subscribe((value) => 
+    console.log('Subject subscription:', value)
+    );
     // this willl print the latest value set even before subscribed
     behaviorSubject.subscribe((value) =>
       console.log('BehavioralSubject subscription:', value)
     );
     // this will print the last number of values which we given in the parameter
-    replaySubject.subscribe((value) => console.log(value));
+    replaySubject.subscribe((value) => 
+    console.log("replay subject",value)
+    );
     // this will print values only when the subject is complete
-    asyncSubject.subscribe((value) => console.log(value));
+    asyncSubject.subscribe((value) => 
+    console.log("async subject", value)
+    );
 
     // =================================
 
@@ -113,7 +131,8 @@ export class RxjsComponent implements OnInit {
 
     postIds
       .pipe(
-        exhaustMap((id) => { // use all four or fice operators here and see results
+        exhaustMap((id) => {
+          // use all four or fice operators here and see results
           return this.http.get(
             `https://isonplaceholder.typicode.com/posts/${id}`
           );
